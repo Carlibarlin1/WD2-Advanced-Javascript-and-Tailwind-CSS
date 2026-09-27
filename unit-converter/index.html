@@ -133,13 +133,66 @@
             id="temperature-section"
             class="hidden bg-white rounded-lg shadow-md p-6 md:p-8">
 
-            <h2 class="text-2xl font-bold">
+            <h2 class="text-2xl font-bold mb-2">
                 Temperature Converter
             </h2>
 
-            <p class="text-gray-600 mt-2">
-                Temperature converter will go here.
+            <p class="text-gray-600 mb-6">
+                Convert between Celsius (°C) and Fahrenheit (°F)
             </p>
+
+            <form id="temperature-form" class="space-y-4">
+
+                <div>
+                    <label for="temperature-input" class="block font-semibold mb-2">
+                        Enter value or list of values
+                    </label>
+
+                    <input
+                    id="temperature-input"
+                    type="text"
+                    placeholder="Example: 20 or 0, 20, 37"
+                    class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label for="temperature-direction" class="block font-semibold mb-2">
+                        Convert
+                    </label>
+
+                    <select
+                    id="temperature-direction"
+                    class="w-full border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                        <option value="c-f">
+                            Celsius (°C) to Fahrenheit (°F)
+                        </option>
+                        <option value="f-c">
+                            Fahrenheit (°F) to Celsius (°C)
+                        </option>
+                    </select>
+                </div>
+
+                <button
+                type="submit"
+                class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg"
+                >
+                Convert
+                </button>
+            </form>
+
+            <div class="mt-6 bg-gray-100 rounded-lg p-4">
+                <h3 class="font-semibold
+
+                        <h3 class="font-semibold text-gray-700">
+                    Result:
+                </h3>
+
+                <p
+                    id="temperature-result"
+                    class="mt-2 text-lg font-semibold text-blue-600">
+                </p>
+            </div>
 
         </section>
 
