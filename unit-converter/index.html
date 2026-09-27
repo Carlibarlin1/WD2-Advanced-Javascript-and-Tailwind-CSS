@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Metric Imperial Converter</title>
+
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+    <nav class="bg-blue-600 text-white shadow-md">
+        <div class="max-w-4xl mx-auto px-4 py-5">
+
+            <h1 class="text-2xl md:text-3xl font-bold mb-4">
+                Metric Imperial Converter
+            </h1>
+
+            <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
+
+                <button 
+                    id="weight-tab"
+                    class="px-4 py-2 rounded font-semibold">
+                    Weight
+                </button>
+
+                <button 
+                    id="distance-tab"
+                    class="px-4 py-2 rounded font-semibold">
+                    Distance
+                </button>
+
+                <button 
+                    id="temperature-tab"
+                    class="px-4 py-2 rounded font-semibold">
+                    Temperature
+                </button>
+            </div>
+
+        </div>
+    </nav>
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Weight Converter Section -->
+         <section 
+            id="weight-section" 
+            class="bg-white rounded-lg shadow-md p-6 md:p-8">
+
+            <h2 class="text-2xl font-bold mb-2">
+                Weight Converter 
+            </h2>
+
+            <p class="text-gray-600 mb-6">
+                Convert between pounds (lb) and kilograms (kg)
+            </p>
+
+            <form id="weight-form" class="space-y-4">
+
+                <!-- Value Input -->
+                 <div>
+                    <label for="weight-input" class="block font-semibold mb-2">
+                        Enter value or list of values
+                    </label>
+
+                    <input 
+                    id="weight-input"
+                    type="text"
+                    placeholder="Example: 10 or 10, 20, 30"
+                    class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                 </div>
+
+                 <!-- Conversion Direction -->
+                  <div>
+                    <label for="weight-direction" class="block font-semibold mb-2">
+                        Convert
+                    </label>
+
+                    <select
+                    id="weight-direction"
+                    class="w-full border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                        <option value="lb-kg">
+                            Pounds (lb) to Kilograms (kg)
+                        </option>
+                        <option value="kg-lb">
+                            Kilograms (kg) to Pounds (lb)
+                        </option>
+                    </select>
+                  </div>
+
+                  <!-- Convert Button -->
+                   <button
+                    type="submit"
+                    class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg"
+                    >
+                    Convert
+                    </button>
+            </form>
+
+            <!-- Result -->
+             <div class="mt-6 bg-gray-100 rounded-lg p-4">
+                <h3 class="font-semibold text-gray-700">
+                    Result:
+                </h3>
+
+                <p 
+                    id="weight-result" 
+                    class="mt-2 text-lg font-semibold text-blue-600">
+                </p>
+             </div>
+
+         </section>
+
+             <!-- Distance Converter Section -->
+        <section
+            id="distance-section"
+            class="hidden bg-white rounded-lg shadow-md p-6 md:p-8">
+
+            <h2 class="text-2xl font-bold">
+                Distance Converter
+            </h2>
+
+            <p class="text-gray-600 mt-2">
+                Distance converter will go here.
+            </p>
+
+        </section>
+
+
+        <!-- Temperature Converter Section -->
+        <section
+            id="temperature-section"
+            class="hidden bg-white rounded-lg shadow-md p-6 md:p-8">
+
+            <h2 class="text-2xl font-bold">
+                Temperature Converter
+            </h2>
+
+            <p class="text-gray-600 mt-2">
+                Temperature converter will go here.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
