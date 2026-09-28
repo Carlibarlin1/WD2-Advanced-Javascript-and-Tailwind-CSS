@@ -107,6 +107,76 @@ weightForm.addEventListener("submit", (event) => {
   }
 });
 
+//Julians part :)
+// Distance from elements
+
+const distanceForm = document.getElementById("distance-form");
+const distanceInput = document.getElementById("distance-input");
+const distanceDirection = document.getElementById("distance-direction");
+const distanceResult = document.getElementById("distance-result");
+
+// Distance form conversion 
+
+distanceForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const input = distanceInput.value;
+
+  // Check for empty input
+
+  if (input.trim() === "") {
+    distanceResult.textContent = "Please enter a value.";
+    return;
+  }
+
+  let value;
+
+  // Check if the user entered a list or a single value
+
+  if (input.includes(",")) {
+    value = input.split(",").map((number) => Number(number));
+  } else {
+    value = Number(input);
+  }
+
+  // Check for invalid input
+
+  if (Array.isArray(value)) {
+    if (value.some((number) => isNaN(number))) {
+      distanceResult.textContent = "Please enter valid numbers.";
+      return;
+    }
+  } else {
+    if (isNaN(value)) {
+      distanceResult.textContent = "Please enter a valid number.";
+      return;
+    }
+  }
+
+  let converter;
+
+  // Choose which distance conversion to use
+
+  if (distanceDirection.value === "mi-km") {
+    converter = createConverter("mi", "km");
+  } else {
+    converter = createConverter("km", "mi");
+  }
+
+  const result = converter(value);
+
+  // Display the result
+
+  if (Array.isArray(result)) {
+    distanceResult.textContent = result
+      .map((number) => number.toFixed(2))
+      .join(", ");
+  } else {
+    distanceResult.textContent = result.toFixed(2);
+  }
+});
+
+
 // Temperature form elements
 const temperatureForm = document.getElementById("temperature-form");
 const temperatureInput = document.getElementById("temperature-input");
