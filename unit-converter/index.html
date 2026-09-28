@@ -112,7 +112,8 @@
 
          </section>
 
-             <!-- Distance Converter Section -->
+                        <!-- Distance Converter Section -->
+
         <section
             id="distance-section"
             class="hidden bg-white rounded-lg shadow-md p-6 md:p-8">
@@ -121,9 +122,64 @@
                 Distance Converter
             </h2>
 
-            <p class="text-gray-600 mt-2">
-                Distance converter will go here.
+            <p class="text-gray-600 mb-6">
+                Convert between miles (mi) and  Kilometres (km)
             </p>
+
+                            <!-- Value input -->
+
+            <form id="distance-form" class="space-y-4">
+                <div>
+                    <label for="distance-input" class="block font-semibold mb-2">
+                        Enter value or list of values
+                    </label>
+                    <input
+                        id="distance-input"
+                        type="text"
+                        placeholder="Example 10 or 10,20,30"
+                        class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                </div>
+
+                                <!-- Conversion Direction -->
+
+                <div>
+                    <label for="distance-direction" class="block font-semibold mb-2">
+                        Convert
+                    </label>
+
+                    <select 
+                    id="distance-direction"
+                    class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                        <option value="mi-km">Miles (mi) to Kilometres (km)</option>
+
+                        <option value="km-mi"> Kilometres (km) to Miles (mi)</option>
+
+                    </select>
+
+                </div>
+                            <!-- Convert button -->
+                <button 
+                type="submit"
+                class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg">
+                    Convert
+                </button>
+
+            </form>
+
+                            <!-- results -->
+
+            <div class="mt-6 bg-gray-100 rounded-lg p-4">
+                <h3 class="font-semibold text-gray-700">
+                    Result:
+                </h3>
+
+                <p 
+                    id="distance-result" 
+                    class="mt-2 text-lg font-semibold text-blue-600">
+                </p>
+             </div>
 
         </section>
 
